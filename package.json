@@ -7,7 +7,9 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "eslint": "eslint .",
+    "eslint:fix": "eslint . --fix"
   },
   "dependencies": {
     "nuxt": "^3.11.2",
@@ -15,6 +17,9 @@
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.12.0"
+    "@nuxt/eslint": "^0.3.10",
+    "@nuxtjs/tailwindcss": "^6.12.0",
+    "eslint": "^8.57.0",
+    "vite-plugin-eslint2": "^4.4.0"
   }
 }

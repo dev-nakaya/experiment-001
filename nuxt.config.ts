@@ -4,7 +4,14 @@ export default defineNuxtConfig({
     enabled: true 
   },
   modules: [
+    '@nuxt/eslint',
     '@nuxtjs/tailwindcss'
   ],
+  eslint: {
+    checker: true,
+    config: {
+      stylistic: true
+    }
+  },
   srcDir: 'src/'
 })
