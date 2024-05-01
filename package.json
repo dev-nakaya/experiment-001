@@ -11,14 +11,14 @@
     "prepare": "husky install",
     "markuplint": "markuplint \"src/**/*.vue\"",
     "markuplint:fix": "markuplint --fix \"src/**/*.vue\"",
-    "eslint": "eslint . --ignore-path .gitignore",
-    "eslint:fix": "eslint . --fix --ignore-path .gitignore"
+    "eslint": "eslint .",
+    "eslint:fix": "eslint . --fix"
   },
   "lint-staged": {
-    "*.{js,ts}": "eslint:fix",
+    "*.{js,ts}": "npm run eslint:fix",
     "*.vue": [
-      "markuplint:fix",
-      "eslint:fix"
+      "npm run markuplint:fix",
+      "npm run eslint:fix"
     ]
   },
   "dependencies": {
