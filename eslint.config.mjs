@@ -1,14 +1,10 @@
+import { FlatCompat } from '@eslint/eslintrc'
 import withNuxt from './.nuxt/eslint.config.mjs'
 
+const compat = new FlatCompat()
+
 export default withNuxt(
-  // your custom flat configs go here, for example:
-  // {
-  //   files: ['**/*.ts', '**/*.tsx'],
-  //   rules: {
-  //     'no-console': 'off' // allow console.log in TypeScript files
-  //   }
-  // },
-  // {
-  //   ...
-  // }
+  ...compat.extends(
+    'plugin:tailwindcss/recommended',
+  ),
 )

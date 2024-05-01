@@ -1,5 +1,5 @@
 <template>
-  <p class="m-4">
+  <p class="p-1 pt-4">
     index page
   </p>
 </template>

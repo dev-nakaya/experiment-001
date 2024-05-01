@@ -1,17 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { 
-    enabled: true 
+  devtools: {
+    enabled: true,
   },
   modules: [
     '@nuxt/eslint',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
   ],
   eslint: {
     checker: true,
     config: {
-      stylistic: true
-    }
+      stylistic: true,
+    },
   },
-  srcDir: 'src/'
+  srcDir: 'src/',
 })
