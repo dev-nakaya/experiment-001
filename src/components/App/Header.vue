@@ -26,7 +26,7 @@
           </NuxtLink>
         </li>
       </ul>
-      <div class="flex flex-1 items-center justify-end gap-2">
+      <div class="flex flex-1 items-center justify-end gap-4">
         <button aria-label="Switch to dark mode">
           <Icon
             name="uil:moon"

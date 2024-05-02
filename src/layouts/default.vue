@@ -1,7 +1,7 @@
 <template>
   <div>
     <AppHeader />
-    <main>
+    <main class="min-h-[calc(100vh-4rem-4rem)]">
       <slot />
     </main>
     <AppFooter />
