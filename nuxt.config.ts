@@ -15,4 +15,8 @@ export default defineNuxtConfig({
     },
   },
   srcDir: 'src/',
+  runtimeConfig: {
+    apiUrl: '',
+    apiKey: '',
+  },
 })
