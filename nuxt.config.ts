@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/test-utils/module',
     '@nuxtjs/tailwindcss',
+    'nuxt-icon',
   ],
   eslint: {
     checker: true,
