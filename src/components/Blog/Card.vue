@@ -13,7 +13,7 @@ defineProps<{
       :key="blog.id"
       class="w-1/2 p-8"
     >
-      <NuxtLink to="/">
+      <NuxtLink :to="`/blogs/${blog.id}`">
         <img
           :src="blog.eyecatch.url"
           :width="blog.eyecatch.width"
