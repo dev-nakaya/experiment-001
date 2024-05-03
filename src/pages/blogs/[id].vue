@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-v-html -->
 <script lang="ts" setup>
 const route = useRoute()
 const id = route.params.id
@@ -21,9 +22,9 @@ if (error.value) {
         :src="blog?.eyecatch.url"
         :width="blog?.eyecatch.width"
         :height="blog?.eyecatch.height"
-        alt="Blog Eyecatch"
+        alt="Blog eyecatch"
         loading="lazy"
-        class="rounded"
+        class="w-full rounded"
       >
       <h1 class="mt-8 text-4xl font-bold">
         {{ blog?.title }}
@@ -49,20 +50,23 @@ if (error.value) {
       </p>
     </section>
     <section class="py-16">
-      <!-- eslint-disable-next-line vue/no-v-html -->
-      <div v-html="blog?.content" />
+      <div
+        class="blog-content"
+        v-html="blog?.content"
+      />
     </section>
     <section
       v-if="blog?.relates[0]"
       class="border-t pt-16"
     >
-      <h2 class="text-2xl font-bold">
+      <h1 class="text-2xl font-bold">
         関連記事
-      </h2>
+      </h1>
       <ul class="my-8 flex items-center justify-between gap-16">
         <li
           v-for="relate in blog.relates"
           :key="relate.id"
+          class="w-1/2"
         >
           <NuxtLink :to="`/blogs/${relate.id}`">
             <img
@@ -73,9 +77,9 @@ if (error.value) {
               loading="lazy"
               class="rounded"
             >
-            <h3 class="mt-4 text-xl font-bold">
+            <h2 class="mt-4 text-xl font-bold">
               {{ relate.title }}
-            </h3>
+            </h2>
             <ul class="mt-1 flex gap-4">
               <li
                 v-for="category in relate.categories"

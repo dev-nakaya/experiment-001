@@ -1,5 +1,5 @@
 <template>
-  <header class="sticky top-0 border-b backdrop-blur">
+  <header class="sticky top-0 z-20 border-b backdrop-blur">
     <div class="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4">
       <h1 class="flex-1">
         <NuxtLink

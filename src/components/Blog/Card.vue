@@ -18,9 +18,9 @@ defineProps<{
           :src="blog.eyecatch.url"
           :width="blog.eyecatch.width"
           :height="blog.eyecatch.height"
-          alt="Blog Eyecatch"
+          alt="Blog eyecatch"
           loading="lazy"
-          class="rounded"
+          class="h-56 w-full rounded object-cover"
         >
         <h2 class="mt-4 text-lg font-bold">
           {{ blog.title }}
