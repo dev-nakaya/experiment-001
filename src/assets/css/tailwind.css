@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    @apply text-slate-800
-  }
-}
-
 @layer components {
   .blog-content {
     h2, h3 {
@@ -39,15 +33,15 @@
     }
 
     p > code {
-      @apply bg-slate-100 border border-slate-300 rounded px-2 py-0.5 font-semibold mx-1
+      @apply bg-slate-100 border border-slate-300 rounded px-2 py-0.5 font-semibold mx-1 text-sm
     }
 
     a {
-      @apply text-green-600 hover:text-green-700 whitespace-pre-wrap break-all
+      @apply text-green-600 hover:text-green-700 whitespace-pre-wrap break-all underline underline-offset-2
     }
 
     u {
-      @apply underline-offset-4
+      @apply underline-offset-2
     }
 
     hr {
@@ -55,11 +49,11 @@
     }
 
     blockquote {
-      @apply border-s-4 p-4 my-8 border-slate-300
+      @apply border-s-4 p-4 my-8 border-slate-300 italic
     }
 
     blockquote > p {
-      @apply last:mb-0
+      @apply last:mb-0 text-slate-500
     }
 
     pre {
@@ -107,7 +101,7 @@
     }
 
     img {
-      @apply rounded text-center w-full h-auto mb-1
+      @apply rounded text-center w-full h-auto mb-1 shadow-lg
     }
 
     iframe {

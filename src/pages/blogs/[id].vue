@@ -17,41 +17,38 @@ if (error.value) {
 
 <template>
   <article class="px-8">
-    <section class="border-b pb-16">
-      <img
-        :src="blog?.eyecatch.url"
-        :width="blog?.eyecatch.width"
-        :height="blog?.eyecatch.height"
-        alt="Blog eyecatch"
-        loading="lazy"
-        class="w-full rounded"
-      >
-      <h1 class="mt-8 text-4xl font-bold">
-        {{ blog?.title }}
-      </h1>
-      <ul class="mt-4 flex items-center gap-4">
-        <li
-          v-for="category in blog?.categories"
-          :key="category.id"
-          class="rounded-md border border-green-500 bg-green-50 px-2 py-1"
+    <section>
+      <div class="border-b pb-16">
+        <img
+          :src="blog?.eyecatch.url"
+          :width="blog?.eyecatch.width"
+          :height="blog?.eyecatch.height"
+          alt="Blog eyecatch"
+          loading="lazy"
+          class="w-full rounded"
         >
-          <NuxtLink
-            to="/"
-            class="text-green-600"
+        <h1 class="mt-8 text-4xl font-bold">
+          {{ blog?.title }}
+        </h1>
+        <ul class="mt-4 flex items-center gap-4">
+          <li
+            v-for="category in blog?.categories"
+            :key="category.id"
           >
-            # {{ category.name }}
-          </NuxtLink>
-        </li>
-      </ul>
-      <p class="mt-2">
-        <time>
-          {{ formarDate(blog?.publishedAt) }}
-        </time>
-      </p>
-    </section>
-    <section class="py-16">
+            <UtilNavigateLink
+              where="/"
+              :content="category.name"
+            />
+          </li>
+        </ul>
+        <p class="mt-4">
+          <time>
+            {{ formarDate(blog?.publishedAt) }}
+          </time>
+        </p>
+      </div>
       <div
-        class="blog-content"
+        class="blog-content my-16"
         v-html="blog?.content"
       />
     </section>
@@ -59,7 +56,7 @@ if (error.value) {
       v-if="blog?.relates[0]"
       class="border-t pt-16"
     >
-      <h1 class="text-2xl font-bold">
+      <h1 class="text-3xl font-bold">
         関連記事
       </h1>
       <ul class="my-8 flex items-center justify-between gap-16">
@@ -77,22 +74,29 @@ if (error.value) {
               loading="lazy"
               class="rounded"
             >
-            <h2 class="mt-4 text-xl font-bold">
-              {{ relate.title }}
-            </h2>
-            <ul class="mt-1 flex gap-4">
-              <li
-                v-for="category in relate.categories"
-                :key="category.id"
-              >
-                # {{ category.name }}
-              </li>
-            </ul>
-            <p class="mt-1">
-              <time>
-                {{ formarDate(relate.publishedAt) }}
-              </time>
-            </p>
+            <dl>
+              <dt class="mt-4 text-xl font-bold">
+                {{ relate.title }}
+              </dt>
+              <dd>
+                <ul class="mt-2 flex gap-4">
+                  <li
+                    v-for="category in relate.categories"
+                    :key="category.id"
+                  >
+                    <UtilNavigateLink
+                      where="/"
+                      :content="category.name"
+                    />
+                  </li>
+                </ul>
+                <p class="mt-2">
+                  <time>
+                    {{ formarDate(relate.publishedAt) }}
+                  </time>
+                </p>
+              </dd>
+            </dl>
           </NuxtLink>
         </li>
       </ul>
