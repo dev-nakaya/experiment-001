@@ -18,7 +18,7 @@ import { socials } from '~/assets/json/master.json'
           :alt="`View my ${social.name}`"
           width="20"
           height="20"
-          class="h-5"
+          class="h-5 w-auto"
         >
       </a>
     </li>

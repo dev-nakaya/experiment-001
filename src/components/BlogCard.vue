@@ -15,7 +15,7 @@ defineProps<{
     >
       <NuxtLink
         :to="`/blogs/${blog.id}`"
-        class="mb-16 block px-4"
+        class="mx-4 mb-16 block"
       >
         <img
           :src="blog.eyecatch.url"

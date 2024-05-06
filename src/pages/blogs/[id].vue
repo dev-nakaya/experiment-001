@@ -54,7 +54,7 @@ if (error.value) {
     </section>
     <section
       v-if="blog?.relates[0]"
-      class="border-t pt-16"
+      class="border-t py-16"
     >
       <h1 class="text-3xl font-bold">
         関連記事
@@ -100,6 +100,25 @@ if (error.value) {
           </NuxtLink>
         </li>
       </ul>
+    </section>
+    <section class="border-t pt-16">
+      <NuxtLink
+        to="/"
+        class="group block w-1/3 rounded-lg border p-6 hover:bg-slate-50"
+      >
+        <div class="mb-4 inline-flex items-center rounded-full border bg-slate-100 p-1.5 group-hover:border-green-500 group-hover:bg-green-50">
+          <span>
+            <Icon
+              name="mdi:arrow-left"
+              size="1.5em"
+              class="group-hover:text-green-600"
+            />
+          </span>
+        </div>
+        <p>
+          ブログ一覧に戻る
+        </p>
+      </NuxtLink>
     </section>
   </article>
 </template>
