@@ -1,5 +1,10 @@
 <!-- eslint-disable vue/no-v-html -->
-<script lang="ts" setup>
+<script lang='ts' setup>
+import { load } from 'cheerio'
+import hljs from 'highlight.js'
+import type { HighlightResult } from 'highlight.js'
+import 'highlight.js/styles/vs2015.css'
+
 const route = useRoute()
 const id = route.params.id
 const { data: blog, error } = await useFetch(`/api/blogs/${id}`, {
@@ -13,6 +18,36 @@ if (error.value) {
     fatal: true,
   })
 }
+
+// リッチエディタのHTMLからcheerioオブジェクトを生成
+const $ = load(blog.value!.content)
+
+// コードブロックのファイル名が入力されている場合
+$('div[data-filename]').each((_, elm) => {
+  $(elm).prepend(`<span>${$(elm).attr('data-filename')}</span>`)
+})
+
+// コードブロックのシンタックスハイライト処理
+$('pre code').each((_, elm) => {
+  const language = $(elm).attr('class') || ''
+  let result: HighlightResult
+
+  if (language) {
+    // 言語入力ありの場合、入力された言語で判定
+    result = hljs.highlight($(elm).text(), {
+      language: language.replace('language-', ''),
+    })
+  }
+  else {
+    // 言語入力なしの場合、自動で判定
+    result = hljs.highlightAuto($(elm).text())
+  }
+
+  $(elm).html(result.value)
+  $(elm).addClass('hljs')
+})
+
+const highlightedContent = $.html()
 </script>
 
 <template>
@@ -49,7 +84,7 @@ if (error.value) {
       </div>
       <div
         class="blog-content my-16"
-        v-html="blog?.content"
+        v-html="highlightedContent"
       />
     </section>
     <section
@@ -106,7 +141,9 @@ if (error.value) {
         to="/"
         class="group block w-1/3 rounded-lg border p-6 hover:bg-slate-50"
       >
-        <div class="mb-4 inline-flex items-center rounded-full border bg-slate-100 p-1.5 group-hover:border-green-500 group-hover:bg-green-50">
+        <div
+          class="mb-4 inline-flex items-center rounded-full border bg-slate-100 p-1.5 group-hover:border-green-500 group-hover:bg-green-50"
+        >
           <span>
             <Icon
               name="mdi:arrow-left"

@@ -57,7 +57,27 @@
     }
 
     pre {
-      @apply bg-slate-200 p-4 rounded whitespace-pre-wrap break-all my-8
+      @apply my-8
+    }
+
+    pre > code {
+      @apply rounded text-sm
+    }
+
+    div[data-filename] {
+      @apply border rounded-t bg-slate-50 my-8
+    }
+
+    div[data-filename] > span {
+      @apply inline-block px-4 py-3 text-sm text-slate-600 w-full
+    }
+
+    div[data-filename] > pre {
+      @apply m-0
+    }
+
+    div[data-filename] > pre > code {
+      @apply rounded-t-none rounded-b
     }
 
     table {
@@ -77,7 +97,7 @@
     }
 
     ul, ol {
-      @apply list-outside space-y-2 marker:text-slate-500 my-8 ml-5
+      @apply list-outside space-y-2 marker:text-slate-600 my-8 ml-5
     }
 
     ul {
@@ -97,7 +117,7 @@
     }
 
     figure > figcaption {
-      @apply text-sm text-center text-slate-500
+      @apply text-sm text-center text-slate-600
     }
 
     img {
