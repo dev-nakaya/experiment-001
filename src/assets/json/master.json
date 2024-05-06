@@ -1,0 +1,111 @@
+{
+  "socials": [
+    {
+      "id": 1,
+      "name": "x",
+      "icon": "x.png",
+      "link": "https://twitter.com/dev_nakaya"
+    },
+    {
+      "id": 2,
+      "name": "Qiita",
+      "icon": "qiita.png",
+      "link": "https://qiita.com/dev-nakaya"
+    },
+    {
+      "id": 3,
+      "name": "zenn",
+      "icon": "zenn.png",
+      "link": "https://zenn.dev/nakaya"
+    },
+    {
+      "id": 4,
+      "name": "note",
+      "icon": "note.png",
+      "link": "https://note.com/dev_nakaya/"
+    },
+    {
+      "id": 5,
+      "name": "connpass",
+      "icon": "connpass.png",
+      "link": "https://connpass.com/user/nakaya1/"
+    },
+    {
+      "id": 6,
+      "name": "speaker deck",
+      "icon": "speaker-deck.png",
+      "link": "https://speakerdeck.com/nakaya"
+    },
+    {
+      "id": 7,
+      "name": "GitHub",
+      "icon": "github.png",
+      "link": "https://github.com/dev-nakaya/"
+    }
+  ],
+  "skills": [
+    {
+      "id": 1,
+      "name": "HTML",
+      "content": "基本レベル",
+      "icon": "",
+      "link": ""
+    },
+    {
+      "id": 2,
+      "name": "CSS",
+      "content": "基本レベル。Sass, TailwindCSS, Vuetify等",
+      "icon": "",
+      "link": ""
+    },
+    {
+      "id": 3,
+      "name": "JavaScript",
+      "content": "基本レベル",
+      "icon": "",
+      "link": ""
+    },
+    {
+      "id": 4,
+      "name": "TypeScript",
+      "content": "TSフレンドリーなVue/Nuxt開発",
+      "icon": "",
+      "link": ""
+    },
+    {
+      "id": 5,
+      "name": "Vue.js",
+      "content": "Jamstack, SPA/SSR等のサイト/サービス開発",
+      "icon": "",
+      "link": ""
+    },
+    {
+      "id": 6,
+      "name": "Nuxt.js",
+      "content": "Jamstack, SPA/SSR等のサイト/サービス開発",
+      "icon": "",
+      "link": ""
+    },
+    {
+      "id": 7,
+      "name": "PHP",
+      "content": "LaravelでのAPI開発",
+      "icon": "",
+      "link": ""
+    },
+    {
+      "id": 8,
+      "name": "AWS",
+      "content": "EC2, S3, CloudFront, Lambda, API Gatewayの構築/運用",
+      "icon": "",
+      "link": ""
+    },
+    {
+      "id": 9,
+      "name": "Other",
+      "content": "GAS, VBA, git, Lint, Netlify, Figma, etc",
+      "icon": "",
+      "link": ""
+    }
+  ]
+}

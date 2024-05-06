@@ -9,5 +9,10 @@ if (error.value) {
 </script>
 
 <template>
-  <BlogCard :blogs="blogs!" />
+  <div class="mx-auto max-w-5xl px-16 py-12">
+    <UtilPageTitle>
+      Blogs
+    </UtilPageTitle>
+    <BlogCard :blogs="blogs!" />
+  </div>
 </template>

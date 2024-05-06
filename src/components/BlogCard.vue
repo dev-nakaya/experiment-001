@@ -7,13 +7,16 @@ defineProps<{
 </script>
 
 <template>
-  <ul class="flex flex-wrap justify-between">
+  <ul class="flex flex-wrap">
     <li
       v-for="blog in blogs.contents"
       :key="blog.id"
-      class="w-1/2 p-8"
+      class="w-1/2"
     >
-      <NuxtLink :to="`/blogs/${blog.id}`">
+      <NuxtLink
+        :to="`/blogs/${blog.id}`"
+        class="mb-16 block px-4"
+      >
         <img
           :src="blog.eyecatch.url"
           :width="blog.eyecatch.width"

@@ -45,7 +45,7 @@
     }
 
     hr {
-      @apply my-8
+      @apply my-16
     }
 
     blockquote {

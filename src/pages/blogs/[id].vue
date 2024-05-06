@@ -16,7 +16,7 @@ if (error.value) {
 </script>
 
 <template>
-  <article class="px-8">
+  <article class="mx-auto max-w-5xl px-16 py-12">
     <section>
       <div class="border-b pb-16">
         <img
